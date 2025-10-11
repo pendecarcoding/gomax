@@ -7,10 +7,10 @@
      <section class="ace-investor">
          <div data-aos="fade-up">
              <div class="col-md-12">
-                 <div class="banner-static">
+                 <!-- <div class="banner-static">
                      <img class="img-responsive-banner" src="/public/aceweb/assets/img/contact-banner.jpg"
                          alt="ACE-BANNER-CONTACT" />
-                 </div>
+                 </div> -->
              </div>
          </div>
      </section>
@@ -18,7 +18,7 @@
      <section class="gtp-anouncements">
          <div class="content-ace">
              <div class="wrap-content">
-                 <div style="padding-top: 0px" class="ace-isi about">
+                 <div style="padding-top: 10vh" class="ace-isi about">
                      <div class="col-md-12" style="margin-top: 5%">
                          <div data-aos="fade-up" class="title-ace">
                              Contact Us
