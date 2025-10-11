@@ -392,10 +392,10 @@ class BusinessSettingsController extends Controller
 
         foreach ($request->types as $key => $type) {
             if($type == 'site_name'){
-                $this->overWriteEnvFile('APP_NAME', $request[$type]);
+                // $this->overWriteEnvFile('APP_NAME', $request[$type]);
             }
             if($type == 'timezone'){
-                $this->overWriteEnvFile('APP_TIMEZONE', $request[$type]);
+                // $this->overWriteEnvFile('APP_TIMEZONE', $request[$type]);
             }
             else {
                 $lang = null;
