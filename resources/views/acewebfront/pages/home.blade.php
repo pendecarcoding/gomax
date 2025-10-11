@@ -823,9 +823,10 @@
                           type="text"
                           name="message"
                           class="form-control"
+                          placeholder="Message *"
                           required
                         >
-Message *</textarea
+</textarea
                         >
                       </div>
                       <div class="form-group">

@@ -709,7 +709,7 @@
                                         <input type="text" name="subject" class="form-control" placeholder="Subject *" required="">
                                     </div>
                                     <div class="form-group">
-                                        <textarea style="height: 20vh" type="text" name="message" class="form-control" required="">Message *</textarea>
+                                        <textarea style="height: 20vh" type="text" name="message" class="form-control" required="" placeholder="Message *"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="ace-button-black" style="background-color: #0f5883;color:white">Get Started
