@@ -18,10 +18,11 @@
                     <p style="color:#ffffff">
                         <b style="font-weight:bold;color:#ffffff">Address</b><br>
                         {{ get_setting('contact_address', null, 'en') }}
-                        <br><b style="font-weight:bold;color:#ffffff">Tel</b><br>
-                    <p style="color:white">{!! get_setting('contact_phone') !!}
+                        <br>
                     </p>
-                    <br><b style="font-weight:bold;color:#ffffff">Email</b><br>
+                    <b style="font-weight:bold;color:#ffffff">Tel</b>
+                  {!! get_setting('contact_phone') !!}
+                    <b style="font-weight:bold;color:#ffffff">Email</b>
                     <p style="color:white">{{ get_setting('contact_email') }}</p>
 
 
@@ -37,7 +38,7 @@
                             HOMEPAGE
                         </h6>
                     </a>
-                    <a href="{{ url('forcorporate') }}">
+                    <a href="{{ url('our_products') }}">
                         <h6 class="text-uppercase fw-bold mb-4 h6-footer">
                             Our Products
                         </h6>
@@ -61,7 +62,7 @@
                     </a>
                     <a href="{{ url('contact') }}">
                         <h6 class="text-uppercase fw-bold mb-4 h6-footer">
-                            Contact
+                            Contact Us
                         </h6>
                     </a>
 

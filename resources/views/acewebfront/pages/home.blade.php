@@ -595,7 +595,7 @@
         </div>
         </div>
       </section>
-      <section id="ace-testimonials-mobile" class="ace-testimonials-mobile">
+      <!-- <section id="ace-testimonials-mobile" class="ace-testimonials-mobile">
         <div class="content-ace">
           <div class="wrap-content">
             <div class="ace-isi about">
@@ -658,14 +658,7 @@
 
                 </div>
 
-                    <!-- <button class="acecarousel-control-prev" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="prev">
-                        <span style="color:#1D5189;font-size: 250%;margin-left:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-                        <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="acecarousel-control-next" type="button" data-bs-target="#myCarouseltesti" data-bs-slide="next">
-                        <span style="color:#1D5189;font-size: 250%;margin-right:20px;font-weight:bold;" aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                        <span class="visually-hidden">Next</span>
-                        </button>-->
+                
 
                   </div>
                 </div>
@@ -674,8 +667,8 @@
             </div>
           </div>
         </div>
-      </section>
-      <section  id="ace-testimonials-desktop" class="ace-testimonials">
+      </section> -->
+      <!-- <section  id="ace-testimonials-desktop" class="ace-testimonials">
         <div class="content-ace">
             <div class="wrap-content">
             <div class="ace-isi about">
@@ -754,7 +747,7 @@
           </div>
         </div>
         </div>
-      </section>
+      </section> -->
       <section class="ace-conected">
 
         <div class="content-ace">
