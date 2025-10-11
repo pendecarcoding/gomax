@@ -97,7 +97,7 @@
     <div class="text-left p-3" style="background-color: #f3cf68;color: white;">
         <div class="wrap-content">
             <div class="row" style="display: flex;">
-                <div class="col-md-6 col-sm-12 col-lg-6">© Copyright 2023
+                <div class="col-md-6 col-sm-12 col-lg-6">© Copyright 2025
                     <a class="text-reset fw-bold" href="#">@ {{ get_setting('site_name') }}</a>
                 </div>
                 <div class="col-md-6 col-sm-12 col-lg-6">

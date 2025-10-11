@@ -43,12 +43,15 @@
                                         <option value="{{ url('newsroom?category=ALL') }}"
                                             @if (isset($_GET['category'])) @if ($_GET['category']=='ALL' ) selected @endif
                                             @endif>ALL NEWS</option>
-                                        <option value="{{ url('newsroom?category=CORPORATE') }}"
-                                            @if (isset($_GET['category'])) @if ($_GET['category']=='CORPORATE' ) selected @endif
-                                            @endif>CORPORATE</option>
-                                        <option value="{{ url('newsroom?category=PERSONAL') }}"
-                                            @if (isset($_GET['category'])) @if ($_GET['category']=='PERSONAL' ) selected @endif
-                                            @endif>PERSONAL</option>
+                                            <option value="{{ url('newsroom?category=LATEST') }}"
+                                            @if (isset($_GET['category'])) @if ($_GET['category']=='LATEST' ) selected @endif
+                                            @endif>Latest</option>
+                                        <option value="{{ url('newsroom?category=MARKET') }}"
+                                            @if (isset($_GET['category'])) @if ($_GET['category']=='MARKET' ) selected @endif
+                                            @endif>Market Insights</option>
+                                        <option value="{{ url('newsroom?category=COMPANY') }}"
+                                            @if (isset($_GET['category'])) @if ($_GET['category']=='COMPANY' ) selected @endif
+                                            @endif>Company News</option>
                                         <!-- <option value="{{ url('newsroom?category=AIAB') }}" @if (isset($_GET['category'])) @if ($_GET['category'] == 'AIAB') selected @endif @endif>AIAB</option> -->
                                     </select>
                                 </div>
