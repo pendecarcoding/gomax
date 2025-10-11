@@ -71,11 +71,11 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3 footer-medsos">
                     <!-- Links -->
-                    <a target="_blank" href="https://www.facebook.com/acgagm">
+                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61578899396106">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/fb.webp" alt=""></h6>
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/acecsocialgroup/">
+                    <a target="_blank" href="https://www.instagram.com/gomexgrowth/">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/ig.png" alt=""></h6>
                     </a>
