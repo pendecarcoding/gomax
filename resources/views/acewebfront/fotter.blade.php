@@ -72,16 +72,16 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3 footer-medsos">
                     <!-- Links -->
-                    <a target="_blank" href="https://www.facebook.com/profile.php?id=61578899396106">
+                    <a target="_blank" href="{{ get_setting('facebook_link') }}">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/fb.webp" alt=""></h6>
                     </a>
-                    <a target="_blank" href="https://www.instagram.com/gomexgrowth/">
+                    <a target="_blank" href="{{ get_setting('instagram_link') }}">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/ig.png" alt=""></h6>
                     </a>
                     <a target="_blank"
-                        href="https://www.youtube.com/channel/UCBoSXibkrvZo78yyc8pVj5A?view_as=subscriber">
+                        href="{{ get_setting('linkedin_link') }}">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/linkedin.png" alt=""></h6>
                     </a>

@@ -110,6 +110,30 @@
                                 <input type="text" class="form-control" placeholder="{{ translate('Email') }}"
                                     name="contact_email" value="{{ get_setting('contact_email') }}">
                             </div>
+                              <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="lab la-facebook-f"></i></span>
+                                </div>
+                                <input type="hidden" name="types[]" value="facebook_link">
+                                <input type="text" class="form-control" placeholder="http://" name="facebook_link"
+                                    value="{{ get_setting('facebook_link') }}">
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="lab la-instagram"></i></span>
+                                </div>
+                                <input type="hidden" name="types[]" value="instagram_link">
+                                <input type="text" class="form-control" placeholder="http://" name="instagram_link"
+                                    value="{{ get_setting('instagram_link') }}">
+                            </div>
+                             <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="lab la-linkedin-in"></i></span>
+                                </div>
+                                <input type="hidden" name="types[]" value="linkedin_link">
+                                <input type="text" class="form-control" placeholder="http://" name="linkedin_link"
+                                    value="{{ get_setting('linkedin_link') }}">
+                            </div>
                             <div class="text-right">
                                 <button type="submit" class="btn btn-primary">{{ translate('Update') }}</button>
                             </div>
