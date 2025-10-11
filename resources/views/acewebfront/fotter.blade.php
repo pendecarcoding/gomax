@@ -29,25 +29,34 @@
                     </p>
                 </div>
                 <!-- Grid column -->
-
+<div class="col-md-1 col-lg-1 col-xl-1 mx-auto mb-1">
+</div>
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
                     <!-- Links -->
-                    <a href="{{ url('ourcompany') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                       <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                       </h6>
+                       <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    <a href="{{ url('ourcompany') }}" style="color:white">
+                      
                             HOMEPAGE
-                        </h6>
+                       
                     </a>
-                    <a href="{{ url('our_products') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                     </h6>
+                      <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    <a href="{{ url('our_products') }}" style="color:white">
+                       
                             Our Products
-                        </h6>
+                        
                     </a>
-                    <a href="{{ url('forcorporate') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    </h6>
+                     <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    <a href="{{ url('forcorporate') }}" style="color:white">
+                       
                             Our Company
-                        </h6>
+                       
                     </a>
+                     </h6>
 
                 </div>
                 <!-- Grid column -->
@@ -55,23 +64,31 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3">
                     <!-- Links -->
-                    <a href="{{ url('newsroom') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                      <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                       </h6>
+                      <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    <a href="{{ url('newsroom') }}" style="color:white">
+                       
                             Newsroom
-                        </h6>
+                       
                     </a>
-                    <a href="{{ url('contact') }}">
-                        <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                     </h6>
+                       <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                    <a href="{{ url('contact') }}" style="color:white">
+                      
                             Contact Us
-                        </h6>
+                       
                     </a>
+                     </h6>
 
                 </div>
                 <!-- Grid column -->
 
                 <!-- Grid column -->
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mb-3 footer-medsos">
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-2 footer-medsos">
                     <!-- Links -->
+                      <h6 class="text-uppercase fw-bold mb-4 h6-footer">
+                       </h6>
                     <a target="_blank" href="{{ get_setting('facebook_link') }}">
                         <h6 class="text-uppercase fw-bold mb-4"><img style="width: 20px; height: 20px"
                                 src="{{ static_asset('aceweb') }}/assets/img/fb.webp" alt=""></h6>
