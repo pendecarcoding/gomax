@@ -56,12 +56,13 @@
             <div class="ace-isi about">
               <div class="row">
                 <div class="col-md-12">
-                  <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
+                 
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-12">
+                   <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
                     GET TO KNOW US
                     <span class="h-dash" style="font-weight: bold">—</span>
                   </div>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-12">
                   <h1>Pioneer leader in the precious metals industry</h1>
                 </div>
                 <div class="col-md-6 col-sm-12">
