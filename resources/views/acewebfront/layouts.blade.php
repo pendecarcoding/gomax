@@ -34,6 +34,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
+    <link href="{{ static_asset('aceweb') }}/assets/ace/pricetable.css" rel="stylesheet" />
 
     <link href="{{ static_asset('aceweb') }}/assets/ace/ace1.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/ace/ver2.css" rel="stylesheet" />
