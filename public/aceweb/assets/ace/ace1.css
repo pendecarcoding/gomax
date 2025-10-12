@@ -1434,10 +1434,9 @@ hr.gold {
 }
 
 .banner-static {
-    height: 53vh;
+    height: 40vh;
     overflow: hidden;
     position: relative;
-
 }
 
 .sticky-content {
