@@ -66,7 +66,7 @@
             background: #eee;
         }
 
-        #myBtn {
+       #myBtn {
             display: none;
             position: fixed;
             bottom: 20px;
@@ -78,12 +78,16 @@
             background-color: #efc75d;
             color: white;
             cursor: pointer;
-            /* padding: 15px; */
-            border-radius: 50%;
+            padding: 10px;
+            border-radius: 8%;
         }
 
         #myBtn:hover {
             background-color: #555;
+        }
+        footer p {
+            margin-top: 0;
+            margin-bottom: 1rem;
         }
     </style>
 

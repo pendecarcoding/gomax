@@ -3,12 +3,7 @@
 <meta property="og:image" content="{{ uploaded_asset(get_setting('system_logo_white')) }}" />
 @endsection
 @section('content')
-<style>
-footer p {
-    margin-top: 0;
-    margin-bottom: 1rem;
-}
-</style>
+
 
 <main style="position: relative;
  overflow: hidden;">
