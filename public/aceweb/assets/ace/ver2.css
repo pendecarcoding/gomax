@@ -2901,6 +2901,7 @@
         font-size: 4.5rem;
     }
     #title-progress {
+        text-align: left;
         font-size: 2rem;
     }
     #to-progress {

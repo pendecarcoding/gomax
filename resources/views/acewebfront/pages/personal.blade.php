@@ -27,7 +27,7 @@
                         hover:bg-slate-100 transition-colors duration-200 border-b border-slate-200
                       "><td class="px-6 py-4 font-medium text-slate-600">6</td>
                       <td class="px-6 py-4"><div class="flex flex-col"><span class="font-semibold text-slate-800">USD/MYR</span><span class="text-sm text-slate-500">Exchange Rate</span></div></td><td class="px-6 py-4 text-center"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-down w-4 h-4 text-red-500" aria-hidden="true"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg></td><td class="px-6 py-4 text-center"><div class="bg-green-50 rounded-lg p-3 border border-green-200"><span class="text-lg font-bold text-green-700">4.22</span></div></td><td class="px-6 py-4 text-center"><div class="bg-blue-50 rounded-lg p-3 border border-blue-200"><span class="text-lg font-bold text-blue-700">4.23</span></div></td><td class="px-6 py-4 text-center"><div class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground font-medium">0.24%</div></td></tr></tbody></table></div></div></div><div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4"><div class="rounded-xl border text-card-foreground shadow bg-green-50 border-green-200">
-                        
+
                         </div></div></section>
 
     <section class="easigold">
@@ -382,7 +382,7 @@
                                         <textarea style="height: 20vh" type="text" name="message" class="form-control" required="" placeholder="Message *"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="ace-button-black" style="background-color: #0f5883;color:white">Get Started
+                                        <button type="submit" class="ace-button-black" style="background-color: #0f5883;color:white;border:none">Get Started
                                         </button>
                                     </div>
                                 </form>

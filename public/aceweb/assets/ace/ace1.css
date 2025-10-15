@@ -2845,8 +2845,8 @@ footer img {
 
 @media screen and (min-width: 300px) and (max-width: 400px) {
     .gtp-solution {
-        background-color: #306390;
-    }
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -3752,9 +3752,9 @@ footer img {
 
 
 @media screen and (min-width: 400px) and (max-width: 500px) {
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -4554,9 +4554,9 @@ footer img {
 }
 
 @media screen and (min-width: 500px) and (max-width: 600px) {
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -5353,9 +5353,9 @@ footer img {
 }
 
 @media screen and (min-width: 570px) and (max-width: 600px) {
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -5747,8 +5747,8 @@ footer img {
 
 @media only screen and (min-width: 600px) and (max-width: 700px) {
     .gtp-solution {
-        background-color: #306390;
-    }
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -6573,8 +6573,8 @@ footer img {
 
 @media only screen and (min-width: 700px) and (max-width:767px) {
     .gtp-solution {
-        background-color: #306390;
-    }
+    background-color: #207b65;
+}
     .mb-4 {
         margin-bottom: 0.5rem !important;
     }
@@ -7399,9 +7399,9 @@ footer img {
 }
 
 @media only screen and (min-width:767px) and (max-width:900px) {
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
     #structur-desktop{
         display: none;
     }
@@ -7977,9 +7977,9 @@ footer img {
     .topnav a {
         font-size: 0.85em;
     }
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
 }
 
 /*@media screen and (min-width: 1200px) and (max-width: 1278px) {
@@ -8149,8 +8149,8 @@ footer img {
 
 @media screen and (min-width: 1001px) and (max-width: 1024px) {
     .gtp-solution {
-        background-color: #306390;
-    }
+    background-color: #207b65;
+}
     .topnav a {
         float: left;
         display: block;
@@ -8308,8 +8308,8 @@ footer img {
 
 @media only screen and (min-width:900px) and (max-width:1024px) {
     .gtp-solution {
-        background-color: #306390;
-    }
+    background-color: #207b65;
+}
     #structur-desktop{
         display: none;
     }
@@ -8865,9 +8865,9 @@ footer img {
 
 }
 @media screen and (min-width: 1025px) and (max-width: 1278px) {
-    .gtp-solution {
-        background-color: #306390;
-    }
+   .gtp-solution {
+    background-color: #207b65;
+}
    .topnav {
         box-shadow: 0 0.0625rem 0.375rem 0 rgb(0 0 0 / 10%);
         z-index: 10;
