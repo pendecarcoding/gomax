@@ -66,11 +66,11 @@
             background: #eee;
         }
 
-       #myBtn {
+     #myBtn {
             display: none;
             position: fixed;
-            bottom: 20px;
-            right: 30px;
+            bottom: 87px;
+            right: 34px;
             z-index: 99;
             font-size: 18px;
             border: none;
@@ -117,6 +117,7 @@
             src="{{ uploaded_asset(get_setting('system_logo_white')) }}" /></a>
 
     @include('acewebfront.header')
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
 
 
     @yield('content')
@@ -192,7 +193,9 @@
             </div>
         </div>
     </div>
-
+<div class="wa-floating-button" onclick="openWhatsApp()">
+        <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
+    </div>
 
     @include('acewebfront.fotter')
     <!--</div>-->
@@ -695,7 +698,20 @@
         });
     </script>
 
+@php
+$noWa = env('WA_NUMBER');
+@endphp
 
+<script type="text/javascript">
+    $(window).on('load', function() {
+        $('#discountbanner').modal('show');
+    });
+</script>
+<script>
+    function openWhatsApp() {
+        window.open("https://api.whatsapp.com/send?phone={!!  $noWa !!}&text=GOMEX", "_blank");
+    }
+</script>
 
 
 

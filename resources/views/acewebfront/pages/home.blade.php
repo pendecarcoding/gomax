@@ -4,7 +4,6 @@
 @endsection
 @section('content')
 <!--CONTENT-->
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
  <main>
 
       <section class="ace-sliders">
@@ -56,7 +55,7 @@
             <div class="ace-isi about">
               <div class="row">
                 <div class="col-md-12">
-                 
+
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200" class="col-md-6 col-sm-12">
                    <div data-aos="fade-up" data-aos-delay="100" class="title-ace">
@@ -659,7 +658,7 @@
 
                 </div>
 
-                
+
 
                   </div>
                 </div>

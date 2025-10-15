@@ -70,7 +70,7 @@
                                 <a href="{{ url('our_products/' . $v->slug) }}">
                                     <center><img class="img-responsive-product"
                                             src="{{ getimage($v->thumbnail_img) }}" alt="" /></center>
-                                            <br>
+                                    <br>
                                     <p>{{ $v->brand->name.' '.$v->name }}</p>
                                     <div style="display:none" class="gram">{{ $v->weight }}</div>
 
@@ -126,24 +126,11 @@
 
 
     </section>
-    <div class="wa-floating-button" onclick="openWhatsApp()">
-        <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
-    </div>
+
 
 </main>
 
 
-
-<script type="text/javascript">
-    $(window).on('load', function() {
-        $('#discountbanner').modal('show');
-    });
-</script>
-<script>
-    function openWhatsApp() {
-        window.open("https://api.whatsapp.com/send?phone=601128613355&text=IGRgoldbar", "_blank");
-    }
-</script>
 
 {{-- <script src="{{ static_asset('aceweb') }}/assets/ace/realprice.js"></script> --}}
 @endsection
