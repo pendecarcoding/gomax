@@ -13,9 +13,9 @@
     <link rel="icon" href="{{ uploaded_asset(get_setting('system_logo_white')) }}">
     <title>
         @if (!empty($page))
-            {{ get_setting('site_name') }} |{{ strtoupper($page) }}
+        {{ get_setting('site_name') }} |{{ strtoupper($page) }}
         @else
-            @yield('title')
+        @yield('title')
         @endif
     </title>
     @yield('meta')
@@ -36,8 +36,13 @@
     <link href="{{ static_asset('aceweb') }}/assets/carousel/carousel.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/ace/pricetable.css" rel="stylesheet" />
 
-    <link href="{{ static_asset('aceweb') }}/assets/ace/ace1.css" rel="stylesheet" />
-    <link href="{{ static_asset('aceweb') }}/assets/ace/ver2.css" rel="stylesheet" />
+    <link
+        href="{{ static_asset('aceweb') }}/assets/ace/ace1.css?v={{ filemtime(public_path('aceweb/assets/ace/ace1.css')) }}"
+        rel="stylesheet">
+    <link
+        href="{{ static_asset('aceweb') }}/assets/ace/ver2.css?v={{ filemtime(public_path('aceweb/assets/ace/ver2.css')) }}"
+        rel="stylesheet">
+
     <!--<link href="assets/ace/scroll.css" rel="stylesheet" />-->
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick.css" rel="stylesheet" />
     <link href="{{ static_asset('aceweb') }}/assets/slick/slick-theme.css" rel="stylesheet" />
@@ -66,7 +71,7 @@
             background: #eee;
         }
 
-     #myBtn {
+        #myBtn {
             display: none;
             position: fixed;
             bottom: 87px;
@@ -85,6 +90,7 @@
         #myBtn:hover {
             background-color: #555;
         }
+
         footer p {
             margin-top: 0;
             margin-bottom: 1rem;
@@ -93,18 +99,18 @@
 
     <!-- Google tag (gtag.js) -->
     @if (get_setting('google_analytics') == 1)
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('TRACKING_ID') }}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('TRACKING_ID') }}"></script>
 
-        <script>
-            window.dataLayer = window.dataLayer || [];
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', '{{ env('TRACKING_ID') }}');
-        </script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', '{{ env('TRACKING_ID') }}');
+    </script>
     @endif
 </head>
 
@@ -117,7 +123,8 @@
             src="{{ uploaded_asset(get_setting('system_logo_white')) }}" /></a>
 
     @include('acewebfront.header')
-<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
+    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"
+            aria-hidden="true"></i></button>
 
 
     @yield('content')
@@ -143,10 +150,9 @@
                             <div style="margin-left: 20px;margin-right: 20px;">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span
-                                            style="height: 40px;
-                                      border-radius: 0px;"
-                                            class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                        <span style="height: 40px;
+                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
+                                                class="fa fa-user"></i></span>
                                     </div>
                                     <input required name="username" type="text" class="form-control"
                                         placeholder="Staff ID" aria-label="Username" aria-describedby="basic-addon1">
@@ -154,10 +160,9 @@
 
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-                                        <span
-                                            style="height: 40px;
-                                      border-radius: 0px;"
-                                            class="input-group-text" id="basic-addon1"><i class="fa fa-lock"></i></span>
+                                        <span style="height: 40px;
+                                      border-radius: 0px;" class="input-group-text" id="basic-addon1"><i
+                                                class="fa fa-lock"></i></span>
                                     </div>
                                     <input id="password" type="password" class="form-control" name="password"
                                         required="" placeholder="Password">
@@ -193,28 +198,28 @@
             </div>
         </div>
     </div>
-<div class="wa-floating-button" onclick="openWhatsApp()">
+    <div class="wa-floating-button" onclick="openWhatsApp()">
         <span class="whatsapp-icon"><i class="fa fa-phone"></i></span>
     </div>
 
     @include('acewebfront.fotter')
     <!--</div>-->
     @if (Session::has('dangger'))
-        <script>
-            // Define a function to be executed when the page finishes loading
-            function pageLoaded() {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Info Login',
-                    text: '{{ Session::get('dangger') }}', // Corrected line
-                });
+    <script>
+        // Define a function to be executed when the page finishes loading
+        function pageLoaded() {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Info Login',
+                text: '{{ Session::get('dangger') }}', // Corrected line
+            });
 
-                // You can add your code here that should run after the page loads
-            }
+            // You can add your code here that should run after the page loads
+        }
 
-            // Attach the 'pageLoaded' function to the onload event of the 'window' object
-            window.onload = pageLoaded;
-        </script>
+        // Attach the 'pageLoaded' function to the onload event of the 'window' object
+        window.onload = pageLoaded;
+    </script>
     @endif
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -224,21 +229,21 @@
 
 
 
-        $('#requestpatnerform').submit(function(event) {
+        $('#requestpatnerform').submit(function (event) {
             event.preventDefault();
             $("#loading").show();
             $.ajax({
                 url: '{{ route('forcorporate.addrequest') }}',
                 type: 'POST',
                 data: $('#requestpatnerform').serialize(),
-                success: function(response) {
+                success: function (response) {
                     if (response == "success") {
 
                         $("#alertpatner").show();
                         $("#requestpatnerform")[0].reset();
                     }
                 },
-                complete: function() {
+                complete: function () {
                     $("#loading").hide();
                 }
             });
@@ -298,7 +303,7 @@
 
         }
 
-        window.onscroll = function() {
+        window.onscroll = function () {
 
             progressBarScroll();
 
@@ -315,7 +320,7 @@
 
         }
 
-        $(window).on("scroll", function() {
+        $(window).on("scroll", function () {
 
             //document.getElementById("progressBar").style.height =  window.innerHeight;
 
@@ -329,7 +334,7 @@
                 window.innerHeight
             ) {
                 if (!localStorage.getItem("visited")) {
-                    $(".number").each(function() {
+                    $(".number").each(function () {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -337,12 +342,12 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function(now) {
+                                step: function (now) {
                                     $(this).text(Math.ceil(now));
                                 },
                             });
                     });
-                    $(".decimal").each(function() {
+                    $(".decimal").each(function () {
                         $(this)
                             .prop("Counter", 0)
                             .animate({
@@ -350,7 +355,7 @@
                             }, {
                                 duration: 2000,
                                 easing: "swing",
-                                step: function(now) {
+                                step: function (now) {
                                     $(this).text(parseFloat(now).toFixed(1));
                                 },
                             });
@@ -363,9 +368,9 @@
         });
 
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
-            $(window).on("scroll", function() {
+            $(window).on("scroll", function () {
 
                 if (
                     $(window).scrollTop() >=
@@ -394,8 +399,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function(i) {
-                        setTimeout(function() {
+                    $(".grid-item").each(function (i) {
+                        setTimeout(function () {
                             $(".grid-item").eq(i).addClass("is-visible");
                         }, 200 * i);
                     });
@@ -410,8 +415,8 @@
                     window.innerHeight
                 ) {
 
-                    $(".grid-item").each(function(i) {
-                        setTimeout(function() {
+                    $(".grid-item").each(function (i) {
+                        setTimeout(function () {
                             $(".grid-item").eq(i).removeClass("is-visible");
                         }, 200 * i);
                     });
@@ -566,12 +571,12 @@
 
     <!--Mansory Scroll-->
     @php
-        $datapatner = getPatner();
+    $datapatner = getPatner();
     @endphp
     <script>
         var images = [
-            @foreach ($datapatner as $i => $p)
-                "{{ getimage($p->image) }}",
+            @foreach($datapatner as $i => $p)
+        "{{ getimage($p->image) }}",
             @endforeach
         ];
         var lists = document.getElementsByClassName("selfie-img");
@@ -631,7 +636,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     <script type="text/javascript">
-        $(function() {
+        $(function () {
             // Masonry Grid
             $(".grid").masonry({
                 itemSelector: ".grid-item",
@@ -691,27 +696,27 @@
     <script></script>
 
     <script>
-        window.addEventListener('wheel', function(event) {
+        window.addEventListener('wheel', function (event) {
             if (event.ctrlKey == true) {
                 event.preventDefault();
             }
         });
     </script>
 
-@php
-$noWa = env('WA_NUMBER');
-@endphp
+    @php
+    $noWa = env('WA_NUMBER');
+    @endphp
 
-<script type="text/javascript">
-    $(window).on('load', function() {
-        $('#discountbanner').modal('show');
-    });
-</script>
-<script>
-    function openWhatsApp() {
-        window.open("https://api.whatsapp.com/send?phone={!!  $noWa !!}&text=GOMEX", "_blank");
-    }
-</script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $('#discountbanner').modal('show');
+        });
+    </script>
+    <script>
+        function openWhatsApp() {
+            window.open("https://api.whatsapp.com/send?phone={!!  $noWa !!}&text=GOMEX", "_blank");
+        }
+    </script>
 
 
 
