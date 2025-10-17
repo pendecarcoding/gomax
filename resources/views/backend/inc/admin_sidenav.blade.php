@@ -84,6 +84,231 @@
                     </li>
                 @endif
 
+
+                 {{-- Uploads Files --}}
+                <li class="aiz-side-nav-item">
+                    <a href="{{ route('uploaded-files.index') }}"
+                        class="aiz-side-nav-link {{ areActiveRoutes(['uploaded-files.create']) }}">
+                        <i class="las la-folder-open aiz-side-nav-icon"></i>
+                        <span class="aiz-side-nav-text">{{ translate('Uploaded Files') }}</span>
+                    </a>
+                </li>
+
+                <!-- Reports -->
+                @canany(['in_house_product_sale_report', 'seller_products_sale_report', 'products_stock_report',
+                    'product_wishlist_report', 'user_search_report', 'commission_history_report',
+                    'wallet_transaction_report'])
+                    <li class="aiz-side-nav-item">
+                        <a href="#" class="aiz-side-nav-link">
+                            <i class="las la-file-alt aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Reports') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                            @can('in_house_product_sale_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('in_house_sale_report.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['in_house_sale_report.index']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('ACE Product Sale') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            {{-- @can('seller_products_sale_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('seller_sale_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seller_sale_report.index'])}}">
+                                        <span class="aiz-side-nav-text">{{ translate('Seller Products Sale') }}</span>
+                                    </a>
+                                </li>
+                            @endcan --}}
+                            @can('products_stock_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('stock_report.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['stock_report.index']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Products Stock') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            {{-- @can('product_wishlist_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('wish_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['wish_report.index'])}}">
+                                        <span class="aiz-side-nav-text">{{ translate('Products wishlist') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('user_search_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('user_search_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['user_search_report.index'])}}">
+                                        <span class="aiz-side-nav-text">{{ translate('User Searches') }}</span>
+                                    </a>
+                                </li>
+                            @endcan --}}
+                            {{-- @can('commission_history_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('commission-log.index') }}" class="aiz-side-nav-link">
+                                        <span class="aiz-side-nav-text">{{ translate('Commission History') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('wallet_transaction_report')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('wallet-history.index') }}" class="aiz-side-nav-link">
+                                        <span class="aiz-side-nav-text">{{ translate('Wallet Recharge History') }}</span>
+                                    </a>
+                                </li>
+                            @endcan --}}
+                        </ul>
+                    </li>
+                @endcanany
+
+                <!--Blog System-->
+                @canany(['view_blogs', 'view_blog_categories'])
+                    <li class="aiz-side-nav-item">
+
+                        <a href="#" class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
+                            <i class="las la-globe aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Posts') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                            @can('view_slider')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('blog.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
+
+                                        <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_blog_categories')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('blog-category.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                        </ul>
+                    </li>
+                @endcan
+                @canany(['view_slider', 'view_about'])
+                    <li class="aiz-side-nav-item">
+
+                        <a href="#" class="aiz-side-nav-link">
+                            <i class="las la-building aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Corporate Page') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                            @can('view_slider')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('slider.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['slider.create', 'slider.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('SLIDER') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_about')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('about.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['about.create', 'about.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('About Us') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_testimonial')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('testimonial.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['testimonial.create', 'testimonial.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Testimonial') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_patners')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('patners.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['patners.create', 'patners.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Patners') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_requestpatner')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('requestpatner.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['requestpatner.create', 'requestpatner.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Request Patner') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            @can('view_providers')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('providers.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['providers.create', 'providers.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Providers') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+
+                            @can('view_contact')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('contact.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['contact.create', 'contact.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Contact Us') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+                            <!-- @can('view_blogs')
+                                                        <li class="aiz-side-nav-item">
+                                                            <a href="{{ route('blog.index') }}"
+                                                                class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
+                                                                <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
+                                                            </a>
+                                                        </li>
+                                        @endcan -->
+                            <!-- @can('view_blog_categories')
+                                                        <li class="aiz-side-nav-item">
+                                                            <a href="{{ route('blog-category.index') }}"
+                                                                class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
+                                                                <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
+                                                            </a>
+                                                        </li>
+                                        @endcan -->
+                        </ul>
+                    </li>
+                @endcanany
+
+                <!--Management Personal-->
+                @canany(['view_personal', 'view_personalpageset', 'view_personaltestimonial'])
+                    <li class="aiz-side-nav-item">
+                        <a href="#" class="aiz-side-nav-link">
+                            <i class="las la-universal-access aiz-side-nav-icon"></i>
+                            <span class="aiz-side-nav-text">{{ translate('Personal Page') }}</span>
+                            <span class="aiz-side-nav-arrow"></span>
+                        </a>
+                        <ul class="aiz-side-nav-list level-2">
+                            <!-- @can('view_personalpageset')
+                                        <li class="aiz-side-nav-item">
+                                            <a href="{{ route('personalpageset.index') }}"
+                                                class="aiz-side-nav-link {{ areActiveRoutes(['perseonalpageset.edit']) }}">
+                                                <span class="aiz-side-nav-text">{{ translate('Personal Page Setting') }}</span>
+                                            </a>
+                                        </li>
+                                @endcan -->
+                            @can('view_personaltestimonial')
+                                <li class="aiz-side-nav-item">
+                                    <a href="{{ route('personaltestimonial.index') }}"
+                                        class="aiz-side-nav-link {{ areActiveRoutes(['personaltestimonial.create', 'personaltestimonial.edit']) }}">
+                                        <span class="aiz-side-nav-text">{{ translate('Testimonial') }}</span>
+                                    </a>
+                                </li>
+                            @endcan
+
+
+
+                        </ul>
+                    </li>
+                @endcanany
+                <!--END PERSONAL-->
+
                 <!-- Product -->
                 @canany(['add_new_product', 'show_all_products', 'show_in_house_products', 'show_seller_products',
                     'show_digital_products', 'product_bulk_import', 'product_bulk_export', 'view_product_categories',
@@ -588,229 +813,7 @@
                                     </li>
                 @endcanany-->
 
-                {{-- Uploads Files --}}
-                <li class="aiz-side-nav-item">
-                    <a href="{{ route('uploaded-files.index') }}"
-                        class="aiz-side-nav-link {{ areActiveRoutes(['uploaded-files.create']) }}">
-                        <i class="las la-folder-open aiz-side-nav-icon"></i>
-                        <span class="aiz-side-nav-text">{{ translate('Uploaded Files') }}</span>
-                    </a>
-                </li>
 
-                <!-- Reports -->
-                @canany(['in_house_product_sale_report', 'seller_products_sale_report', 'products_stock_report',
-                    'product_wishlist_report', 'user_search_report', 'commission_history_report',
-                    'wallet_transaction_report'])
-                    <li class="aiz-side-nav-item">
-                        <a href="#" class="aiz-side-nav-link">
-                            <i class="las la-file-alt aiz-side-nav-icon"></i>
-                            <span class="aiz-side-nav-text">{{ translate('Reports') }}</span>
-                            <span class="aiz-side-nav-arrow"></span>
-                        </a>
-                        <ul class="aiz-side-nav-list level-2">
-                            @can('in_house_product_sale_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('in_house_sale_report.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['in_house_sale_report.index']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('ACE Product Sale') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            {{-- @can('seller_products_sale_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('seller_sale_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['seller_sale_report.index'])}}">
-                                        <span class="aiz-side-nav-text">{{ translate('Seller Products Sale') }}</span>
-                                    </a>
-                                </li>
-                            @endcan --}}
-                            @can('products_stock_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('stock_report.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['stock_report.index']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Products Stock') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            {{-- @can('product_wishlist_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('wish_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['wish_report.index'])}}">
-                                        <span class="aiz-side-nav-text">{{ translate('Products wishlist') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('user_search_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('user_search_report.index') }}" class="aiz-side-nav-link {{ areActiveRoutes(['user_search_report.index'])}}">
-                                        <span class="aiz-side-nav-text">{{ translate('User Searches') }}</span>
-                                    </a>
-                                </li>
-                            @endcan --}}
-                            {{-- @can('commission_history_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('commission-log.index') }}" class="aiz-side-nav-link">
-                                        <span class="aiz-side-nav-text">{{ translate('Commission History') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('wallet_transaction_report')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('wallet-history.index') }}" class="aiz-side-nav-link">
-                                        <span class="aiz-side-nav-text">{{ translate('Wallet Recharge History') }}</span>
-                                    </a>
-                                </li>
-                            @endcan --}}
-                        </ul>
-                    </li>
-                @endcanany
-
-                <!--Blog System-->
-                @canany(['view_blogs', 'view_blog_categories'])
-                    <li class="aiz-side-nav-item">
-
-                        <a href="#" class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
-                            <i class="las la-globe aiz-side-nav-icon"></i>
-                            <span class="aiz-side-nav-text">{{ translate('Posts') }}</span>
-                            <span class="aiz-side-nav-arrow"></span>
-                        </a>
-                        <ul class="aiz-side-nav-list level-2">
-                            @can('view_slider')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('blog.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
-
-                                        <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_blog_categories')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('blog-category.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                        </ul>
-                    </li>
-                @endcan
-                @canany(['view_slider', 'view_about'])
-                    <li class="aiz-side-nav-item">
-
-                        <a href="#" class="aiz-side-nav-link">
-                            <i class="las la-building aiz-side-nav-icon"></i>
-                            <span class="aiz-side-nav-text">{{ translate('Corporate Page') }}</span>
-                            <span class="aiz-side-nav-arrow"></span>
-                        </a>
-                        <ul class="aiz-side-nav-list level-2">
-                            @can('view_slider')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('slider.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['slider.create', 'slider.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('SLIDER') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_about')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('about.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['about.create', 'about.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('About Us') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_testimonial')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('testimonial.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['testimonial.create', 'testimonial.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Testimonial') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_patners')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('patners.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['patners.create', 'patners.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Patners') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_requestpatner')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('requestpatner.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['requestpatner.create', 'requestpatner.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Request Patner') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            @can('view_providers')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('providers.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['providers.create', 'providers.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Providers') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-
-                            @can('view_contact')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('contact.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['contact.create', 'contact.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Contact Us') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-                            <!-- @can('view_blogs')
-                                                        <li class="aiz-side-nav-item">
-                                                            <a href="{{ route('blog.index') }}"
-                                                                class="aiz-side-nav-link {{ areActiveRoutes(['blog.create', 'blog.edit']) }}">
-                                                                <span class="aiz-side-nav-text">{{ translate('All Posts') }}</span>
-                                                            </a>
-                                                        </li>
-                                        @endcan -->
-                            <!-- @can('view_blog_categories')
-                                                        <li class="aiz-side-nav-item">
-                                                            <a href="{{ route('blog-category.index') }}"
-                                                                class="aiz-side-nav-link {{ areActiveRoutes(['blog-category.create', 'blog-category.edit']) }}">
-                                                                <span class="aiz-side-nav-text">{{ translate('Categories') }}</span>
-                                                            </a>
-                                                        </li>
-                                        @endcan -->
-                        </ul>
-                    </li>
-                @endcanany
-
-                <!--Management Personal-->
-                @canany(['view_personal', 'view_personalpageset', 'view_personaltestimonial'])
-                    <li class="aiz-side-nav-item">
-                        <a href="#" class="aiz-side-nav-link">
-                            <i class="las la-universal-access aiz-side-nav-icon"></i>
-                            <span class="aiz-side-nav-text">{{ translate('Personal Page') }}</span>
-                            <span class="aiz-side-nav-arrow"></span>
-                        </a>
-                        <ul class="aiz-side-nav-list level-2">
-                            <!-- @can('view_personalpageset')
-                                        <li class="aiz-side-nav-item">
-                                            <a href="{{ route('personalpageset.index') }}"
-                                                class="aiz-side-nav-link {{ areActiveRoutes(['perseonalpageset.edit']) }}">
-                                                <span class="aiz-side-nav-text">{{ translate('Personal Page Setting') }}</span>
-                                            </a>
-                                        </li>
-                                @endcan -->
-                            @can('view_personaltestimonial')
-                                <li class="aiz-side-nav-item">
-                                    <a href="{{ route('personaltestimonial.index') }}"
-                                        class="aiz-side-nav-link {{ areActiveRoutes(['personaltestimonial.create', 'personaltestimonial.edit']) }}">
-                                        <span class="aiz-side-nav-text">{{ translate('Testimonial') }}</span>
-                                    </a>
-                                </li>
-                            @endcan
-
-
-
-                        </ul>
-                    </li>
-                @endcanany
-                <!--END PERSONAL-->
 
 
                 <!--Investor RElation-->
