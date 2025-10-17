@@ -59,7 +59,7 @@ use App\Http\Controllers\PersonalPageset;
 use App\Http\Controllers\InvestorController;
 use App\Http\Controllers\FileStaffController;
 use App\Http\Controllers\ace\ContactController;
-
+use App\Http\Controllers\PermissionController;
 
 /*
   |--------------------------------------------------------------------------
@@ -79,7 +79,7 @@ Route::controller(UpdateController::class)->group(function () {
 });
 
 Route::get('/admin', [AdminController::class, 'admin_dashboard'])->name('admin.dashboard')->middleware(['auth', 'admin']);
-Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function() {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function () {
 
     // category
     Route::resource('categories', CategoryController::class);
@@ -145,7 +145,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::post('/bulk-product-upload', 'bulk_upload')->name('bulk_product_upload');
         Route::get('/product-csv-download/{type}', 'import_product')->name('product_csv.download');
         Route::get('/vendor-product-csv-download/{id}', 'import_vendor_product')->name('import_vendor_product.download');
-        Route::group(['prefix' => 'bulk-upload/download'], function() {
+        Route::group(['prefix' => 'bulk-upload/download'], function () {
             Route::get('/category', 'pdf_download_category')->name('pdf.download_category');
             Route::get('/brand', 'pdf_download_brand')->name('pdf.download_brand');
             Route::get('/seller', 'pdf_download_seller')->name('pdf.download_seller');
@@ -279,7 +279,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
 
 
     // website setting
-    Route::group(['prefix' => 'website'], function() {
+    Route::group(['prefix' => 'website'], function () {
         Route::controller(WebsiteController::class)->group(function () {
             Route::get('/footer', 'footer')->name('website.footer');
             Route::get('/header', 'header')->name('website.header');
@@ -294,7 +294,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
             Route::get('/custom-pages/destroy/{id}', 'destroy')->name('custom-pages.destroy');
         });
     });
-
+    //Permission
+    Route::resource('permission', PermissionController::class);
+    Route::controller(PermissionController::class)->group(function () {
+        Route::get('/permission/create', 'create')->name('permission.create');
+        Route::get('/permission/edit/{id}', 'edit')->name('permission.edit');
+    });
     // Staff Roles
     Route::resource('roles', RoleController::class);
     Route::controller(RoleController::class)->group(function () {
@@ -306,7 +311,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     });
 
     //staff corp
-    Route::resource('staffcop',StaffController::class);
+    Route::resource('staffcop', StaffController::class);
     Route::controller(StaffController::class)->group(function () {
         Route::get('staffcop/view/all', 'indexstaff')->name('staffcop.index');
         Route::get('copstaff/view/all', 'indexcopstaff')->name('copstaff.index');
@@ -393,9 +398,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     Route::get('/blog-category/destroy/{id}', [BlogCategoryController::class, 'destroy'])->name('blog-category.destroy');
 
     //SLIDEr
-    Route::resource('slider',SliderController::class);
+    Route::resource('slider', SliderController::class);
     Route::controller(SliderController::class)->group(function () {
-         Route::get('/slider/destroy/{id}', 'destroy')->name('slider.destroy');
+        Route::get('/slider/destroy/{id}', 'destroy')->name('slider.destroy');
         Route::post('/slider/change-status', 'change_status')->name('slider.change-status');
     });
 
@@ -406,40 +411,39 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::post('/personal_testimonials/save', 'addtestimonial')->name('personaltestimonial.storetestimonial');
         Route::get('/personal_testimonials/edit/{id}', 'edittestimonial')->name('personaltestimonial.edit');
         Route::post('/personal_testimonials/updatebanner', 'updatebanner')->name('personaltestimonial.updatebanner');
-   });
+    });
 
-    Route::resource('about',AboutController::class);
+    Route::resource('about', AboutController::class);
     Route::controller(AboutController::class)->group(function () {
         Route::post('/about/change-status', 'updater')->name('about.change-status');
     });
 
-    Route::resource('requestpatner',RequestPatner::class);
+    Route::resource('requestpatner', RequestPatner::class);
     Route::controller(RequestPatner::class)->group(function () {
         // Route::post('/about/change-status', 'updater')->name('about.change-status');
         Route::get('/requestpatner/viewmessage/{id}', 'viewmessage')->name('requestpatner.viewmessage');
-
     });
 
 
     //Testimonial
-    Route::resource('testimonial',TestimonialController::class);
+    Route::resource('testimonial', TestimonialController::class);
     Route::controller(TestimonialController::class)->group(function () {
-         Route::get('/testimonial/destroy/{id}', 'destroy')->name('testimonial.destroy');
-         Route::post('/testimonial/change-status', 'change_status')->name('testimonial.change-status');
+        Route::get('/testimonial/destroy/{id}', 'destroy')->name('testimonial.destroy');
+        Route::post('/testimonial/change-status', 'change_status')->name('testimonial.change-status');
     });
 
     //Patners
-     Route::resource('patners',PatnersController::class);
-     Route::controller(PatnersController::class)->group(function () {
-         Route::get('/patners/destroy/{id}', 'destroy')->name('patners.destroy');
-         Route::post('/patners/change-status', 'change_status')->name('patners.change-status');
+    Route::resource('patners', PatnersController::class);
+    Route::controller(PatnersController::class)->group(function () {
+        Route::get('/patners/destroy/{id}', 'destroy')->name('patners.destroy');
+        Route::post('/patners/change-status', 'change_status')->name('patners.change-status');
     });
 
     //Providers
-     Route::resource('providers',ProvidersController::class);
-     Route::controller(ProvidersController::class)->group(function () {
-         Route::get('/providers/destroy/{id}', 'destroy')->name('providers.destroy');
-         Route::post('/providers/change-status', 'change_status')->name('providers.change-status');
+    Route::resource('providers', ProvidersController::class);
+    Route::controller(ProvidersController::class)->group(function () {
+        Route::get('/providers/destroy/{id}', 'destroy')->name('providers.destroy');
+        Route::post('/providers/change-status', 'change_status')->name('providers.change-status');
     });
 
     // Blog
@@ -450,22 +454,22 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     });
 
     //announcements
-     Route::resource('announcements',AnnouncementsController::class);
-     Route::controller(AnnouncementsController::class)->group(function () {
-         Route::get('/announcements/destroy/{id}', 'destroy')->name('announcements.destroy');
-         Route::get('/announcements/destroyadmin/{id}', 'destroyadmin')->name('announcementsadmin.destroy');
-         Route::get('/announcementstaff', 'announcementstaff')->name('announcements.staff');
-         Route::post('/announcementstaff/store', 'storeadmin')->name('announcements.storeadmin');
-         Route::get('/announcementstaff/create', 'announcementstaffcreate')->name('announcementsadmin.create');
-         Route::patch('/announcementstaff/updateadmin/{id}', 'updateadmin')->name('announcements.updateadmin');
-         Route::get('/announcementstaff/edit/{id}', 'announcementstaffedit')->name('announcementsadmin.edit');
-         Route::post('/announcements/change-status', 'change_status')->name('announcements.change-status');
+    Route::resource('announcements', AnnouncementsController::class);
+    Route::controller(AnnouncementsController::class)->group(function () {
+        Route::get('/announcements/destroy/{id}', 'destroy')->name('announcements.destroy');
+        Route::get('/announcements/destroyadmin/{id}', 'destroyadmin')->name('announcementsadmin.destroy');
+        Route::get('/announcementstaff', 'announcementstaff')->name('announcements.staff');
+        Route::post('/announcementstaff/store', 'storeadmin')->name('announcements.storeadmin');
+        Route::get('/announcementstaff/create', 'announcementstaffcreate')->name('announcementsadmin.create');
+        Route::patch('/announcementstaff/updateadmin/{id}', 'updateadmin')->name('announcements.updateadmin');
+        Route::get('/announcementstaff/edit/{id}', 'announcementstaffedit')->name('announcementsadmin.edit');
+        Route::post('/announcements/change-status', 'change_status')->name('announcements.change-status');
     });
 
 
     //handbook and another
     //announcements
-    Route::resource('filestaff',FileStaffController::class);
+    Route::resource('filestaff', FileStaffController::class);
     Route::controller(FileStaffController::class)->group(function () {
         Route::get('/handbookstaff', 'index')->name('handbook.staff');
         Route::post('/handbook/published', 'change_status')->name('handbook.published');
@@ -474,38 +478,37 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
         Route::get('/handbook/destroy/{id}', 'destroyhandbook')->name('handbook.destroy');
         Route::get('/handbook/edit/{id}', 'handbookedit')->name('handbook.edit');
         Route::post('/handbook/update', 'updatehandbook')->name('handbook.update');
-   });
+    });
 
 
     //Banner Investor
-    Route::resource('investorset',InvestorController::class);
+    Route::resource('investorset', InvestorController::class);
     Route::controller(InvestorController::class)->group(function () {
         Route::get('/banner/set', 'setbanner')->name('investor.bannerset');
-        Route::post('/banner/update','updatebanner')->name('investor.updatebanner');
-
-   });
+        Route::post('/banner/update', 'updatebanner')->name('investor.updatebanner');
+    });
 
     //messageceo
-     Route::resource('messagefromceo',MessageCeoController::class);
-     Route::controller(MessageCeoController::class)->group(function () {
+    Route::resource('messagefromceo', MessageCeoController::class);
+    Route::controller(MessageCeoController::class)->group(function () {
 
-         Route::get('investorrelation','financialresults')->name('financialresults.index');
-         Route::get('shareholderreturn','shareholderreturn')->name('shareholderreturn.index');
-         Route::get('/messagefromceo/destroy/{id}', 'destroy')->name('messagefromceo.destroy');
-         Route::post('/messagefromceo/change-status', 'change_status')->name('messagefromceo.change-status');
+        Route::get('investorrelation', 'financialresults')->name('financialresults.index');
+        Route::get('shareholderreturn', 'shareholderreturn')->name('shareholderreturn.index');
+        Route::get('/messagefromceo/destroy/{id}', 'destroy')->name('messagefromceo.destroy');
+        Route::post('/messagefromceo/change-status', 'change_status')->name('messagefromceo.change-status');
     });
 
     //Downloads
-     Route::resource('downloads',DownloadsController::class);
-     Route::controller(DownloadsController::class)->group(function () {
-         Route::get('/downloads/destroy/{id}', 'destroy')->name('downloads.destroy');
-         Route::post('/downloads/change-status', 'change_status')->name('downloads.change-status');
+    Route::resource('downloads', DownloadsController::class);
+    Route::controller(DownloadsController::class)->group(function () {
+        Route::get('/downloads/destroy/{id}', 'destroy')->name('downloads.destroy');
+        Route::post('/downloads/change-status', 'change_status')->name('downloads.change-status');
     });
     //Ir Persentation
-     Route::resource('persentation',PersentationController::class);
-     Route::controller(PersentationController::class)->group(function () {
-         Route::get('/persentation/destroy/{id}', 'destroy')->name('persentation.destroy');
-         Route::post('/persentation/change-status', 'change_status')->name('persentation.change-status');
+    Route::resource('persentation', PersentationController::class);
+    Route::controller(PersentationController::class)->group(function () {
+        Route::get('/persentation/destroy/{id}', 'destroy')->name('persentation.destroy');
+        Route::post('/persentation/change-status', 'change_status')->name('persentation.change-status');
     });
 
     //Coupons
@@ -541,7 +544,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     //conversation of seller customer
     Route::controller(ConversationController::class)->group(function () {
         Route::get('conversations', 'admin_index')->name('conversations.admin_index');
-        Route::get('conversations/{id}/show','admin_show')->name('conversations.admin_show');
+        Route::get('conversations/{id}/show', 'admin_show')->name('conversations.admin_show');
     });
 
     // product Queries show on Admin panel
@@ -552,7 +555,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
     });
 
     // Product Attribute
-    Route::resource('attributes', AttributeController::class );
+    Route::resource('attributes', AttributeController::class);
     Route::controller(AttributeController::class)->group(function () {
         Route::get('/attributes/edit/{id}', 'edit')->name('attributes.edit');
         Route::get('/attributes/destroy/{id}', 'destroy')->name('attributes.destroy');
@@ -595,7 +598,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function(
 
     // States
     Route::resource('states', StateController::class);
-	Route::post('/states/status', [StateController::class, 'updateStatus'])->name('states.status');
+    Route::post('/states/status', [StateController::class, 'updateStatus'])->name('states.status');
 
     // Carriers
     Route::resource('carriers', CarrierController::class);

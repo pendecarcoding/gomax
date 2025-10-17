@@ -1556,6 +1556,14 @@
                                         </a>
                                     </li>
                                 @endcan
+                                 @can('view_staff_permission')
+                                    <li class="aiz-side-nav-item">
+                                        <a href="{{ route('permission.index') }}"
+                                            class="aiz-side-nav-link {{ areActiveRoutes(['permission.index', 'permission.create', 'permission.edit']) }}">
+                                            <span class="aiz-side-nav-text">{{ translate('Permissions') }}</span>
+                                        </a>
+                                    </li>
+                                @endcan
                                 @can('view_staff_roles')
                                     <li class="aiz-side-nav-item">
                                         <a href="{{ route('roles.index') }}"
