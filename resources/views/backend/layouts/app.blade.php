@@ -1,8 +1,8 @@
 <!doctype html>
 @if (\App\Models\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
-    <html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html dir="rtl" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @else
-    <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @endif
 
 <head>
@@ -24,16 +24,17 @@
     <!-- aiz core css -->
     <link rel="stylesheet" href="{{ static_asset('assets/css/vendors.css') }}">
     @if (\App\Models\Language::where('code', Session::get('locale', Config::get('app.locale')))->first()->rtl == 1)
-        <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
+    <link rel="stylesheet" href="{{ static_asset('assets/css/bootstrap-rtl.min.css') }}">
     @endif
     <link rel="stylesheet" href="{{ static_asset('assets/css/aiz-core.css') }}">
     <link rel="stylesheet" type="text/css"
         href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
-    {{-- <link href="{{ static_asset('assets/Datatables/datatables.min.css') }}" rel="stylesheet"/>
+    {{--
+    <link href="{{ static_asset('assets/Datatables/datatables.min.css') }}" rel="stylesheet" />
     <script src="{{ static_asset('assets/Datatables/datatables.min.js') }}"></script> --}}
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
-<script src="https://cdn.ckeditor.com/4.20.1/full/ckeditor.js"></script>
+    <script src="https://cdn.ckeditor.com/4.25.1/full/ckeditor.js"></script>
 
     <style>
         body {
@@ -98,21 +99,21 @@
     @yield('script')
 
     <script type="text/javascript">
-        @foreach (session('flash_notification', collect())->toArray() as $message)
-            AIZ.plugins.notify('{{ $message['level'] }}', '{{ $message['message'] }}');
+        @foreach(session('flash_notification', collect()) -> toArray() as $message)
+        AIZ.plugins.notify('{{ $message['level'] }}', '{{ $message['message'] }}');
         @endforeach
 
 
         if ($('#lang-change').length > 0) {
-            $('#lang-change .dropdown-menu a').each(function() {
-                $(this).on('click', function(e) {
+            $('#lang-change .dropdown-menu a').each(function () {
+                $(this).on('click', function (e) {
                     e.preventDefault();
                     var $this = $(this);
                     var locale = $this.data('flag');
                     $.post('{{ route('language.change') }}', {
                         _token: '{{ csrf_token() }}',
                         locale: locale
-                    }, function(data) {
+                    }, function (data) {
                         location.reload();
                     });
 
@@ -124,7 +125,7 @@
             var filter, item;
             filter = $("#menu-search").val().toUpperCase();
             items = $("#main-menu").find("a");
-            items = items.filter(function(i, item) {
+            items = items.filter(function (i, item) {
                 if ($(item).find(".aiz-side-nav-text")[0].innerText.toUpperCase().indexOf(filter) > -1 && $(item)
                     .attr('href') !== '#') {
                     return item;
@@ -140,12 +141,12 @@
                         const link = $(items[i]).attr('href');
                         $("#search-menu").append(
                             `<li class="aiz-side-nav-item"><a href="${link}" class="aiz-side-nav-link"><i class="las la-ellipsis-h aiz-side-nav-icon"></i><span>${text}</span></a></li`
-                            );
+                        );
                     }
                 } else {
                     $("#search-menu").html(
                         `<li class="aiz-side-nav-item"><span	class="text-center text-muted d-block">{{ translate('Nothing Found') }}</span></li>`
-                        );
+                    );
                 }
             } else {
                 $("#main-menu").removeClass('d-none');
@@ -155,13 +156,13 @@
     </script>
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $('#example').DataTable({
                 pagingType: 'full_numbers',
             });
         });
     </script>
-<script>
+    <script>
         CKEDITOR.replace('editor');
     </script>
 </body>
