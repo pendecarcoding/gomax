@@ -97,7 +97,7 @@
                             <div class="form-group">
                                 <label>{{ translate('Contact phone') }}</label>
                                 <input type="hidden" name="types[]" value="contact_phone">
-                                <textarea name="contact_phone" id="editor">
+                                <textarea name="contact_phone" class="aiz-text-editor">
                                 {{ get_setting('contact_phone') }}
                                 </textarea>
 
@@ -110,7 +110,7 @@
                                 <input type="text" class="form-control" placeholder="{{ translate('Email') }}"
                                     name="contact_email" value="{{ get_setting('contact_email') }}">
                             </div>
-                              <div class="input-group form-group">
+                            <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="lab la-facebook-f"></i></span>
                                 </div>
@@ -126,7 +126,7 @@
                                 <input type="text" class="form-control" placeholder="http://" name="instagram_link"
                                     value="{{ get_setting('instagram_link') }}">
                             </div>
-                             <div class="input-group form-group">
+                            <div class="input-group form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="lab la-linkedin-in"></i></span>
                                 </div>
