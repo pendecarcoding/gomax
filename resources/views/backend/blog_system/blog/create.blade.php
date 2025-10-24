@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
+                    <!-- <div class="form-group row">
                         <label class="col-md-3 col-form-label">{{translate('Meta Title')}}</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="meta_title" placeholder="{{translate('Meta Title')}}">
@@ -126,7 +126,7 @@
                         <div class="col-md-9">
                             <input type="text" class="form-control" id="meta_keywords" name="meta_keywords" placeholder="{{translate('Meta Keywords')}}">
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="form-group mb-0 text-right">
                         <button type="submit" class="btn btn-primary">
