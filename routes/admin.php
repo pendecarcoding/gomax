@@ -285,6 +285,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
             Route::get('/header', 'header')->name('website.header');
             Route::get('/appearance', 'appearance')->name('website.appearance');
             Route::get('/pages', 'pages')->name('website.pages');
+            Route::get('/pages/use/plugin', 'createuseplugin')->name('website.pages.useplugin');
         });
 
         // Custom Page
@@ -396,6 +397,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin']], function 
     //Blog cateory
     Route::resource('blog-category', BlogCategoryController::class);
     Route::get('/blog-category/destroy/{id}', [BlogCategoryController::class, 'destroy'])->name('blog-category.destroy');
+
+
+    Route::resource('menu', MenuController::class);
+    Route::controller(MenuController::class)->group(function () {
+        Route::get('/menu/destroy/{id}', 'destroy')->name('menu.destroy');
+        Route::post('/menu/change-status', 'change_status')->name('menu.change-status');
+    });
+
 
     //SLIDEr
     Route::resource('slider', SliderController::class);

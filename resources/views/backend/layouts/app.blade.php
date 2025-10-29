@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <script src="https://cdn.ckeditor.com/4.25.1/full/ckeditor.js"></script>
 
+
+
     <style>
         body {
             font-size: 12px;

@@ -724,6 +724,14 @@ class GomaxController extends Controller
 
                 break;
 
+            case 'page-custom':
+                $data = Page::where('slug', $slug)->first();
+                if (!empty($data)) {
+                    return view('acewebfront.pages.custompage.index', compact('data'));
+                }
+                abort(404);
+                break;
+
 
 
             default:
